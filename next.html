@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Data Visualizaion</title>
+    <link rel="icon" href="Images/WorldLogo.png">
+    <link rel="stylesheet" href="next.css">
+    <script src="https://kit.fontawesome.com/ad7ed24cd5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="Images/WorldLogo.png" alt="">
+        <div class="headerClass">
+            <h2><span style="color: #3f04fff7; font-size: 36px;">World Data</span> Visualizaion</h2>
+            <p>Welcome <Span id="userName"></Span></p>
+        </div>
+            <p>Currently we have <Span>195</Span> countries.</p>
+    </header>
+
+    <div class="navBar">
+        <nav>
+            
+                <li>View Countries</li>
+                <li>View  Continents</li>
+                <li>Stacistics</li>
+                <li><a href="https://bisai20i.github.io/world/">View Top/Bottom Countries</a></li>
+            
+        </nav>
+    </div>
+
+
+    <div class="searchBox">
+        <div class="searchBar">
+            <input type="text" placeholder="Search...." id="searchBar">
+            <button onclick="callRNode()"><i class="fa-solid fa-x"></i></button>
+        </div>
+        
+    </div>
+
+    <div class="countriesInfo" id="countriesInfo" >
+
+    </div>
+
+
+
+
+    <script src="next.js"></script>
+</body>
+</html>

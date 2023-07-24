@@ -1,0 +1,211 @@
+*{
+    font-family: cursive;
+}
+:root{
+    --main-color : #7bff00;
+    --secondary-color : #3f04fff7;
+    --backgroundColor : #5e665e;
+}
+body{
+    background-color: var(--backgroundColor);
+}
+header{
+    display:flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    background-color: var(--main-color);
+    border-radius: 15px;
+    color: var(--backgroundColor);
+}
+header h2{
+    font-size: 36px;
+}
+header img{
+    padding: 5px;
+    margin: 5px;
+    height: 100px;
+    width: 100px;
+
+}
+.headerClass{
+    
+    text-align: center;
+    margin: 10px 25px;
+    width: 60%;
+}
+.headerClass p{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+header span{
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--secondary-color);
+}
+.searchElement{
+    display: flex;
+}
+.hide{
+    display:none;
+}
+.navBar{
+    display:flex;
+    height: auto;
+    
+    padding: 2px;
+    margin:8px;
+    color: var(--backgroundColor);
+    justify-content: center;
+    align-items: center;
+}
+.navBar nav{
+    border-radius: 15px;
+    background-color: var(--main-color);
+}
+.navBar nav li{
+    float: left;
+    text-decoration: none;
+    list-style: none;
+    padding: 3px;
+    margin: 2px 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .8s;
+}
+.navBar nav li a{
+    text-decoration: none;
+    padding: 5px 15px;
+    color: var(--main-color);
+    background-color: var(--backgroundColor);
+    border-radius: 30px;
+    transition: .8s;
+}
+.navBar nav li:hover{
+    color:var(--secondary-color);
+}
+.navBar a:hover{
+    color: var(--secondary-color);
+}
+.active{
+    color: var(--secondary-color);
+}
+.searchBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 10px;
+}
+.searchBar input,button{
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 2px 15px;
+    transition: .7s;
+}
+.searchBar input:hover,button:hover{
+    box-shadow: 2px 4px 8px var(--main-color);
+
+}
+
+.countriesInfo{
+   
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 20px;
+    margin: 10px;
+    
+}
+
+
+@media (max-width: 830px){
+    header h2{
+        font-size: 30px;
+    }
+    .countriesInfo{
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+    
+}
+
+
+@media (max-width: 700px){
+    header h2{
+        font-size: 25px;
+    }
+    .countriesInfo{
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .navBar{
+        
+        margin:2px;
+    }
+    .navBar nav li{
+        margin: 2px 0;
+        font-size: 13px;
+        padding:5px;
+        background-color: var(--backgroundColor);
+        border-radius: 15px;
+        color: var(--main-color);
+    }
+    .navBar nav li a{
+        margin: 2px 0;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 500px){
+    header h2{
+        font-size: 16px;
+    }
+
+    .countriesInfo{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .navBar{
+        margin:10px 2px;
+    }
+    .navBar nav {
+        display: flex;
+        height: 70px;
+        overflow: scroll;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        
+    }
+    .navBar nav li {
+        
+        text-align: center;
+        
+        margin: 2px 4px;
+        font-size: 13px;
+    }
+    .searchBar input,button{
+        border: none;
+        border-radius: 20px;
+        padding: 5px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 2px 8px;
+        transition: .7s;
+        box-shadow: 2px 4px 8px var(--main-color);
+    }
+    header p{
+        font-size: 14px;
+        text-align: center;
+        margin: 2px;
+        padding: 2px;
+    }
+    header img{
+        height: 80px;
+        width: 80px;
+    }
+}

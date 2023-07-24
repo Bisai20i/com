@@ -1,0 +1,130 @@
+:root{
+    --bgColor: #2390159d;
+    --secondaryColor: #20d20d;
+    --semiColor: #e4d7d7;
+}
+body{
+    background-color: var(--bgColor);
+}
+header{
+    padding: 5px;
+    margin:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondaryColor);
+    overflow: hidden;
+    border-radius: 10px;
+}
+header img{
+    height: 100px;
+    width: 100px;
+}
+header h1{
+    margin-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--semiColor)
+}
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 10%;
+    height:auto;
+    width: 80%;
+    background-color: var(--semiColor);
+    border-radius: 10px;
+}
+.formContent{
+    margin: 15px;
+    padding: 5px;
+    width: 100%;
+}
+.inputClass{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    height: auto;
+    width: 100%;
+}
+.radioContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    height: auto;
+    width: 100%;
+}
+.inputClass  label{
+    text-align:center;
+    padding: 5px;
+    margin:8px;
+    
+    font-size: 20px;
+    font-weight: 600;
+}
+.inputClass input{
+    padding: 8px;
+    margin: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 15px;
+}
+.radioContent label{
+    text-align:center;
+    padding: 5px;
+    margin:8px;
+    
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin:25px;
+}
+.submitButton{
+    background-color: var(--secondaryColor);
+background-image: -webkit-linear-gradient(283deg, rgba(255, 255, 255, 0.1) 50%, transparent 55%),-webkit-linear-gradient(top, rgba(255, 255, 255, 0.15), transparent);
+border-radius: 6px;
+box-shadow: 0 0 0 1px #163772 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 4px 0 0 #333797,0 4px 0 1px rgba(0, 0, 0, 0.4),0 4px 4px 1px rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 5px 25px;
+    padding: 10px;
+    transition: .5s;
+}
+.submitButton:hover{
+    background-color: var(--bgColor);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+@media (max-width: 768px)  {
+  .inputClass{
+    display: block;
+  }  
+  .inputClass input{
+    width:80%;
+  }
+  header h1{
+    font-size: 22px;
+
+  }
+  .radioContent{
+    display: block;
+    margin: 10px 5px;
+  }
+  .radioContent label{
+    font-size: 18px;
+    padding: 2px;
+    margin: 4px;
+  }
+  
+}
