@@ -2,9 +2,9 @@
     font-family: cursive;
 }
 :root{
-    --main-color : #7bff00;
+    --main-color : rgb(95, 244, 95);
     --secondary-color : #3f04fff7;
-    --backgroundColor : #5e665e;
+    --backgroundColor : #303230;
 }
 body{
     background-color: var(--backgroundColor);
@@ -159,6 +159,52 @@ header span{
         font-size: 13px;
     }
 }
+.loadingScreen{
+    background-color: rgba(255, 255, 255, 0.3);;
+    display: flex;
+    top:0;
+    left:0;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+.loader1{
+    animation: spin 1s linear infinite;
+}
+.loader{
+    border: 7px solid #fff;
+    border-top: 7px solid var(--main-color);
+    border-bottom: 7px solid var(--secondary-color);
+    border-radius: 50%;
+    box-shadow: 2px 4px 4px 0 #8bcb8d, 4px 2px 4px 2px #7e75aa inset;
+    height: 50px;
+    width: 50px;
+    
+    animation: spin2 1s linear infinite;
+}
+@keyframes spin{
+    0%{transform: rotate(0deg); }
+    100%{transform: rotate(360deg);}
+}
+@keyframes spin2{
+    0%{transform: scale(0.5);}
+    50%{transform: scale(1);}
+    100%{transform: scale(0.5);}
+}
+
+#showErr{
+    display: flex;
+    bottom: 0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 @media (max-width: 500px){
     header h2{

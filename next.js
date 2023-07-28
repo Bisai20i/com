@@ -3,6 +3,23 @@ document.getElementById('userName').textContent = userName.toUpperCase()
 
 const countriesInfo = document.getElementById('countriesInfo')
 const searchBar = document.getElementById('searchBar')
+const loadingScreen = document.querySelector('.loadingScreen')
+const showErr = document.getElementById('showErr')
+const errorMsg = document.getElementById('errorMsg')
+
+
+errorMsg.style.color = 'red'
+errorMsg.style.fontWeight = '600'
+errorMsg.style.padding = '10px'
+errorMsg.style.fontSize = '18px'
+
+
+function callRNode(){
+    removeNode(countriesInfo)
+    errorMsg.textContent = ''
+    searchBar.value = ''
+    return false
+}
 
 
 
@@ -16,6 +33,8 @@ const removeNode=(parentNode)=>{
 
 
 const displayAll = () =>{
+    errorMsg.textContent = ''
+    loadingScreen.style.display = 'flex';
     fetch('https://restcountries.com/v2/all')
 .then(response=>response.json())
 .then(data=>{
@@ -24,7 +43,7 @@ const displayAll = () =>{
     {
     let newElement = document.createElement('div')
     newElement.style.textAlign = 'center'
-    newElement.style.backgroundColor = '#7bff00'
+    newElement.style.backgroundColor = ' rgb(95, 244, 95)'
     newElement.style.borderRadius = '15px'
     newElement.innerHTML = `
     <img src = "${country.flag}" alt="${country.name} flag" height="80px" width="100px" style="margin-top:5px">
@@ -35,6 +54,8 @@ const displayAll = () =>{
     `
     countriesInfo.appendChild(newElement)
     }
+    loadingScreen.style.display = 'none';
+    errorMsg.textContent = ''
 })
 .catch(err=>console.log(err))
 
@@ -43,8 +64,9 @@ const displayAll = () =>{
 
 
 searchBar.addEventListener('input',function(){
-
+    loadingScreen.style.display = 'flex';
     removeNode(countriesInfo)
+    errorMsg.textContent = ''
     
     let content = searchBar.value
     if(content === '')
@@ -55,13 +77,17 @@ searchBar.addEventListener('input',function(){
     .then(response=>response.json())
     .then(data=>{
     filteredCountries = data.filter(country=> country.name.toLowerCase().includes(content.toLowerCase()))
+    if(filteredCountries.length === 0)
+    {
+        errorMsg.textContent = 'No countries with such name Exists.'
+    }
     let countries = filteredCountries.sort((a,b)=>a.name-b.name)
     removeNode(countriesInfo)
     for(country of countries)
     {
         let newElement = document.createElement('div')
-          newElement.style.textAlign = 'center'
-         newElement.style.backgroundColor = '#7bff00'
+        newElement.style.textAlign = 'center'
+         newElement.style.backgroundColor = ' rgb(95, 244, 95)'
         newElement.style.borderRadius = '15px'
         newElement.innerHTML = `
         <img src = "${country.flag}" alt="${country.name} flag" height="80px" width="100px" style="margin-top:5px">
@@ -72,6 +98,8 @@ searchBar.addEventListener('input',function(){
         `
         countriesInfo.appendChild(newElement)
     }
+    loadingScreen.style.display = 'none';
+    
 })
 .catch(err=>console.log(err))
     
@@ -79,8 +107,8 @@ searchBar.addEventListener('input',function(){
 
 
 
-function callRNode(){
-    removeNode(countriesInfo)
-    return false
-}
 
+
+document.addEventListener('DOMContentLoaded',function() {
+    loadingScreen.style.display = 'none';
+})
